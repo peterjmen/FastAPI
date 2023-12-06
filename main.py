@@ -11,6 +11,14 @@ app = FastAPI(
     description="Description of stuff",  # Change this to your desired description
 )
 
+
+# TODO: uvicorn main:app --host 127.0.0.1 --port 1987 --reload
+# FIXME:
+# HACK:
+# XXX:
+# NOTE:
+
+
 # Redirect to the /docs endpoint when accessing the root URL
 @app.get('/', include_in_schema=False)
 async def redirect_to_docs():
