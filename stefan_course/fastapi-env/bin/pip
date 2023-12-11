@@ -1,4 +1,4 @@
-#!/Users/pete/Projects/FastAPI/stefan_course/new_env/bin/python3
+#!/Users/pete/Projects/FastAPI/stefan_course/fastapi-env/bin/python3.11
 # -*- coding: utf-8 -*-
 import re
 import sys

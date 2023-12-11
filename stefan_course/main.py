@@ -1,13 +1,20 @@
 from fastapi import FastAPI
 from router import blog_get
 from router import blog_post
+from router import user
+from db import models
+from db.database import engine
+
 
 
 
 app = FastAPI()
 
-app.include_router(blog_get.router)
+app.include_router(user.router)
+
+app.include_router(blog_get.router) 
 app.include_router(blog_post.router)
+
 
 
 # Define methods 🔽 # On the functions
@@ -27,12 +34,12 @@ def index():
          ) # HTTP request here ->
 def gb():  # Runs this function
     """
-    - This seems like a **better** way to do descriptions, using markup in the def
+    - This seems like a **better** way to do positive, using markup in the def
     - Bullet points
     - Yay
     """
     data = {1: 'goodbye, world'}  # object/dictionary in python, but gets turned into JSON!! (awesome)
     return data  # This is what is actually returned when we go to that endpoint
 
-
+models.Base.metadata.create_all(engine)
 
